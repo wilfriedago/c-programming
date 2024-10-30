@@ -37,8 +37,7 @@
 *.hex
 
 # Output
-dist/*
-!dist/.gitkeep
+dist/
 
 # Debug files
 *.dSYM/

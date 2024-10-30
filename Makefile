@@ -11,7 +11,7 @@ OBJS=$(C_SRCS:.c=.o)
 
 # Modify the executable name by yourself.
 ifeq (,$(PROGRAM))
-	PROGRAM=program
+	PROGRAM=main
 endif
 
 ifeq ($(detected_OS),Windows)
@@ -25,12 +25,12 @@ ifeq (,$(C_STD))
 	C_STD=c11
 endif
 
-
 .PHONY: all clean
 
 all: dist/$(TARGET)
 
 dist/$(TARGET): $(OBJS)
+	@mkdir -p dist
 	$(CC) -o dist/$(TARGET) $(OBJS) $(LDFLAGS)
 
 %.o:%.c
