@@ -30,6 +30,7 @@ endif
 all: dist/$(TARGET)
 
 dist/$(TARGET): $(OBJS)
+	@rm -rf dist
 	@mkdir -p dist
 	$(CC) -o dist/$(TARGET) $(OBJS) $(LDFLAGS)
 
